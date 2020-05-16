@@ -1,14 +1,11 @@
 CC=gcc
-TARGET=like_strace
+TARGET=mytrace
 
 # single file, so intermediate .o files not needed
-all: $(TARGET).out
+all: $(TARGET)
 
-$(TARGET).out: $(TARGET).c
-	$(CC) $(TARGET).c -o $(TARGET).out
+$(TARGET): $(TARGET).c
+	$(CC) $(TARGET).c -o $(TARGET)
 
 clean: 
-	rm -rf $(TARGET).out
-
-run: all
-	./$(TARGET).out
+	rm -rf $(TARGET)
